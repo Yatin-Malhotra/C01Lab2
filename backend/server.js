@@ -218,7 +218,7 @@ app.patch("/editNote/:noteId", express.json(), async (req, res) => {
                 return res.status(404).json({ error: "Unable to find note with given ID." });
             }
 
-            res.json({ response: "Note updated successfully." });
+            res.json({ response: "Document with ID {" + noteId + "} properly updated." });
         });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -250,7 +250,7 @@ app.delete("/deleteNote/:noteId", express.json(), async (req, res) => {
                 return res.status(404).json({ error: "Unable to find note with given ID." });
             }
 
-            res.json({ response: "Note deleted successfully." });
+            res.json({ response: "Document with ID {" + noteId + "} properly deleted." });
         });
     } catch (error) {
         res.status(500).json({ error: error.message });
